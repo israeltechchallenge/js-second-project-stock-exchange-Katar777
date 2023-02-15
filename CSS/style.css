@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 90%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+#searchBtn {
+  min-width: 130px;
+}
+
+.company-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: xx-large;
+  margin: 1rem 0 3rem 0;
+}
+
+.company-profile {
+  align-items: center;
+  padding-right: 30%;
+  gap: 30%;
+}
+
+img {
+    width: 200px;
+}
+
+.Short-profile {
+  font-weight: 500;
+}
+
+.container {
+  width: 1000px;
+}
+
+
+
+span {
+  color: rgb(8, 27, 114);
+}
+
+#CEO{
+  font-weight: 700;
+}
