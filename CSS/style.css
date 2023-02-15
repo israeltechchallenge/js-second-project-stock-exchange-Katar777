@@ -9,7 +9,7 @@
 }
 
 .w-80 {
-  width: 90%;
+  width: 80%;
 }
 
 .w-10 {
@@ -45,12 +45,32 @@ img {
   width: 1000px;
 }
 
-
-
 span {
   color: rgb(8, 27, 114);
 }
 
 #CEO{
   font-weight: 700;
+}
+
+img.small {
+  width: 50px;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }
