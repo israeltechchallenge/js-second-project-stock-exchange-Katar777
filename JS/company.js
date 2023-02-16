@@ -49,8 +49,9 @@ showCompanyData = (data) => {
         </div>
         <div class="Main-section">
             <p id="CEO"><span>CEO:   </span>${ceo}</p>
-            <p>Description: ${description}</p>       
+            <p><span>Description:<br></span> ${description}</p>       
             <p>Address: ${address}, ${city}, ${state}, ${country}</p>
+            <br>
             <p>Official website: <a href="${website}">${website}</a></p>
         </div>
       `;

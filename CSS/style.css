@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-
 }
 
 .w-90 {
@@ -16,8 +15,22 @@
   width: 10%;
 }
 
+h1 {
+  text-align: center;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 #searchBtn {
   min-width: 130px;
+}
+
+.search-field {
+  padding-top: 2em;
+  gap: 1em;
 }
 
 .company-name {
@@ -33,8 +46,9 @@
   gap: 30%;
 }
 
-img {
-    width: 200px;
+img { 
+  padding: 2em 0em 2em 0em;
+  width: 180px;
 }
 
 .Short-profile {
@@ -47,14 +61,20 @@ img {
 
 span {
   color: rgb(8, 27, 114);
+  font-weight: 600;
 }
 
-#CEO{
-  font-weight: 700;
+#CEO {
+  padding-bottom: 1em;
+}
+
+#bar-chart {
+  padding-top: 3em;
 }
 
 img.small {
   width: 50px;
+  padding:0;
 }
 
 .list-group-item {
@@ -73,4 +93,47 @@ p {
 
 .green {
   color: green;
+}
+
+.marquee-wrapper {
+  height: 4em;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 30s linear infinite;
+  animation-play-state: running;
+  border: 1px solid #dbdbdb;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+.marquee-name {
+  min-width: fit-content;
+  margin-left: 22.2px;
+  margin-right: 5px;
+  max-height: 10px;
+  font-size: 1vw;
+}
+
+.marquee-price {
+  font-size: 1vw;
 }

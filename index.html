@@ -16,6 +16,7 @@
 
   <body>
     <div class="marquee-wrapper" id="marquee-wrapper"></div>
+    <h1>Search NASDAQ Stocks</h1>
     <div class="container d-column">
       <div class="search-field d-flex">
         <input type="text" id="searchBar" class="w-90" />
@@ -40,5 +41,19 @@
       crossorigin="anonymous"
     ></script>
     <script src="/JS/main.js"></script>
+    <script src="/JS/company.js"></script>
+    <script src="/JS/Marquee.js"></script>
+    <script>
+      (async function () {
+        const marqueeObject = new Marquee(
+          document.getElementById("marquee-wrapper")
+        );
+        marqueeObject.load();
+        const form = new SearchForm(document.getElementById("form"));
+        const results = new SearchResults(document.getElementById("results"));
+        form.onSearch();
+        results.render();
+      })();
+    </script>
   </body>
 </html>

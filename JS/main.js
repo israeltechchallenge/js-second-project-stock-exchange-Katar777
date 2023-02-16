@@ -10,7 +10,7 @@ getDataFromServer = async () => {
   showSpinner();
   let usersInput = searchBar.value;
   let UrlForFetch = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/searc
-h?query=${usersInput}&limit=10&exchange=NASDAQ`;
+h?query=${usersInput}&limit=11&exchange=NASDAQ`;
 
   if (usersInput == "") {
     alert("Type in your request!");
@@ -21,7 +21,6 @@ h?query=${usersInput}&limit=10&exchange=NASDAQ`;
         alert("Something went bad");
       }
       const data = await response.json();
-      //
       for (const company of data) {
         const { symbol } = company;
         getAdditionalDataFromServer(symbol);
