@@ -1,5 +1,4 @@
-const companyStockHistory =
-  baseURL + `historical-price-full/${companySymbol}?serietype=line`;
+
 
 async function getHistoricalData() {
   const response = await fetch(companyStockHistory);
