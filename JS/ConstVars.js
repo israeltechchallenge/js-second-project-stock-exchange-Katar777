@@ -5,3 +5,4 @@ const companyURL = `${baseURL}company/profile/${companySymbol}`;
 const companyData = document.getElementById("company-data");
 const baseLinkToCompany = `/HTML_PAGES/company.html?symbol=`;
 const companyStockHistory = baseURL + `historical-price-full/${companySymbol}?serietype=line`;
+const delay = 1000;

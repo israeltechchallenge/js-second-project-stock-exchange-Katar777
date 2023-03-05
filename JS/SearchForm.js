@@ -14,6 +14,7 @@ class SearchForm {
         "mainContainer"
       );
       this.searchInput.classList.add("search-input","w-50");
+      this.searchInput.onkeyup = this.debounce(this.getDataFromServer,delay)
       this.searchBtn.classList.add("searchBtn","btn", "btn-secondary");
       this.ulForResults.classList.add("list-group", "list-group-flush");
       this.loadingSpinner.classList.add("spinner","spinner-border", "spinner-border-sm","d-none")
@@ -48,20 +49,21 @@ class SearchForm {
           const {symbol} = company;
           this.getAdditionalDataFromServer(symbol);
         }
-          console.log(data);
           return data;
         } catch (err) {
           console.error(err);
         }
       }
     }
+
+
+
   
      getAdditionalDataFromServer = async(symbol) => {
       try {
         const response = await fetch(baseURL + `company/profile/${symbol}`);
         const addedData = await response.json();
         this.displaySearchResultInHtml(addedData)
-        console.log(addedData);
       } catch (error) {
         console.log(error);
       }
@@ -70,7 +72,6 @@ class SearchForm {
     displaySearchResultInHtml = (addedData) => {
       const {companyName, image, changesPercentage} = addedData.profile;
       const symbol = addedData.symbol;
-    
       const newItem = document.createElement("li");
       newItem.classList.add("list-group-item","d-flex",
       "align-items-center");
@@ -99,10 +100,33 @@ class SearchForm {
       link.innerHTML = companyName;
     
       newItem.append(companyLogo, link, `(${addedData.symbol})`, changesInPercentages);
-      this.ulForResults.appendChild(newItem);
-    
+      this.ulForResults.appendChild(newItem); 
+      console.log(this.ulForResults.innerHTML)
+      console.log(this.searchInput.value)
       this.hideSpinner();
+      this.highlightBackground();
     }
+
+    highlightBackground=()=> {
+
+      let searchText = this.searchInput.value;
+      let text = this.ulForResults.innerHTML;
+      const regex = new RegExp(`(?<=\\>|\\()${searchText}`, "gi");
+      const outputString = `${text.replace(regex, (match) => `<span class="yellow">${match}</span>`)}`;
+      this.ulForResults.innerHTML = `${outputString}`
+
+  };
+   
+
+    debounce=(func, delay = 200) =>{
+      let timerId
+      return function () {
+          clearTimeout(timerId)
+          timerId = setTimeout(() => {
+              func()
+          }, delay)
+      }
+  }
   
     showSpinner = () => {
       this.loadingSpinner.classList.remove("d-none");

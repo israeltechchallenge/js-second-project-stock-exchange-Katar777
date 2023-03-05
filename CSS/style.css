@@ -104,6 +104,9 @@ span{
 .w-10 {
   width: 10%;
 }
+.yellow{
+  background-color: yellow;
+}
 
 .searchBtn {
   min-width: 130px;
