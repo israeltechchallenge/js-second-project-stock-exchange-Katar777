@@ -1,0 +1,137 @@
+p {
+  margin: 0;
+}
+
+li {
+  gap: 0.5em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+span{
+  color: rgb(124, 14, 220);
+  font-weight: 500;
+}
+
+.btn {
+  line-height: 1;
+}
+
+.small {
+  width: 30px;
+  height: 30px;
+}
+
+.mainContainer {
+  gap: 1em;
+}
+.list-group {
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: space-around;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.marquee-wrapper {
+  height: 4em;
+  overflow: hidden;
+}
+
+.marquee {
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 30s linear infinite;
+  animation-play-state: running;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-name {
+  min-width: fit-content;
+  margin-left: 22.2px;
+  margin-right: 5px;
+  max-height: 10px;
+  font-size: 1vw;
+}
+
+.marquee-price {
+  font-size: 1vw;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-10 {
+  width: 10%;
+}
+.yellow{
+  background-color: yellow;
+}
+
+.searchBtn {
+  min-width: 130px;
+}
+
+.search-input {
+border-radius: 5px;
+border: 1px solid rgb(82, 82, 82);
+}
+
+#CEO{
+  font-weight: 600;
+}
+
+.Main-section p {
+  padding: 0.5em 0;
+}
+
+.company-name{
+  text-align: center;
+  padding: 1em 0 1.5em 0;
+}
+.company-logo img{
+  width:200px;
+  height:200px;
+  padding: 2em 0;
+
+}
